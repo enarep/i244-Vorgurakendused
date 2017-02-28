@@ -4,25 +4,23 @@
 		<meta charset="UTF-8">
 		<title>Koduleht</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script>
-			
-				setTimeout("document.body.style.backgroundColor='#ffffff'", 100)
-				setTimeout("document.body.style.backgroundColor='#f2e6ff'", 200)
-				setTimeout("document.body.style.backgroundColor='#e6ccff'", 300)
-				setTimeout("document.body.style.backgroundColor='#d9b3ff'", 400)
-				setTimeout("document.body.style.backgroundColor='#cc99ff'", 500)
-				setTimeout("document.body.style.backgroundColor='#bf80ff'", 600)
-				setTimeout("document.body.style.backgroundColor='#b366ff'", 700)
-				setTimeout("document.body.style.backgroundColor='#a64dff'", 800)
-				setTimeout("document.body.style.backgroundColor='#9933ff'", 900)
-				setTimeout("document.body.style.backgroundColor='#a64dff'", 1000)
-				setTimeout("document.body.style.backgroundColor='#b366ff'", 1100)
-				setTimeout("document.body.style.backgroundColor='#bf80ff'", 1200)
-				setTimeout("document.body.style.backgroundColor='#cc99ff'", 1300)
-				setTimeout("document.body.style.backgroundColor='#d9b3ff'", 1400)
-				setTimeout("document.body.style.backgroundColor='#e6ccff'", 1500)
-				setTimeout("document.body.style.backgroundColor='#f2e6ff'", 1600)
-			
+			 $(document).ready(function () {
+                setInterval(function(){
+                    var back = ["#ff0000","blue","gray","#ffff00","#ff00ff"];
+                    var rand = back[Math.floor(Math.random() * back.length)];
+                    $('body').css('background', rand);
+                    });
+                }, 500);
+                
+             $(document).ready(function () {
+                setInterval(function(){
+                    var back = ["#ff0000","blue","gray","#ffff00","#ff00ff"];
+                    var rand = back[Math.floor(Math.random() * back.length)];
+                    $('div').css('background', rand);
+                    });
+                }, 500);
 		</script>
 		
 	</head>

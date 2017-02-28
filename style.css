@@ -1,8 +1,18 @@
 body {
-    }
+    background: azure;
+}
 
 h1 {
     color: black;
     text-align: center;
 }
 
+a:hover {
+    display: block;
+    width: 100px;
+    color: chartreuse;
+}
+
+div {
+    background: azure;
+}
