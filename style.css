@@ -8,11 +8,15 @@ h1 {
 }
 
 a:hover {
-    display: block;
-    width: 100px;
     color: chartreuse;
 }
 
 div {
     background: azure;
+}
+
+.thumb:hover {
+    transform: scale(1.5);
+    display: block;
+    width: 200px;
 }
