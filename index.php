@@ -5,23 +5,10 @@
 		<title>Koduleht</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<script>
-			 $(document).ready(function () {
-                setInterval(function(){
-                    var back = ["#ff0000","blue","gray","#ffff00","#ff00ff"];
-                    var rand = back[Math.floor(Math.random() * back.length)];
-                    $('body').css('background', rand);
-                    });
-                }, 500);
-                
-             $(document).ready(function () {
-                setInterval(function(){
-                    var back = ["#ff0000","blue","gray","#ffff00","#ff00ff"];
-                    var rand = back[Math.floor(Math.random() * back.length)];
-                    $('div').css('background', rand);
-                    });
-                }, 500);
-		</script>
+		<script src="js/backgr.js"></script>
+
+			 
+		
 		
 	</head>
 
@@ -56,7 +43,7 @@
 	
     
 	<div align="center">
-		<img src="silm.gif" alt="pilt" width="640" height="427"/>
+		<img class="gif" src="img/silm.gif" alt="pilt" width="640" height="427"/>
 	</div>
 	
 	<div align="center">
