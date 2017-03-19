@@ -1,3 +1,7 @@
+<?php 
+	session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -12,7 +16,29 @@
         <div class='circleBase inner'>
             <table align='center'>
                 <tr>
-                    <th><a href="login.html"><h3 class="curve">Logi sisse</h3></a><a href="register.html"><h3 class="curve">Registreeru</h3></a><a href="galerii.php"><h3 class="curve">Galerii</h3></a></th>
+                    <th>
+						<?php
+							if (isset($_SESSION['login_user'])){
+								
+								echo '<h3 class="curve">';
+								echo "Tere, ";
+								echo $_SESSION['login_user'];
+								echo '</h3>';
+							
+							} else {
+								echo '<a href="login.php">';
+								echo '<h3 class="curve">Logi sisse</h3>';
+								echo "</a>";
+							}
+						?>
+						<a href="reg.php"><h3 class="curve">Registreeru</h3></a>
+						<a href="galerii.php"><h3 class="curve">Galerii</h3></a>
+						<?php
+							if(isset($_SESSION['login_user'])){
+								echo '<a href="logout.php"><h3 class="curve">Logi välja</h3></a>';
+							}
+						?>	
+						</th>
                 </tr>
             </table>
         </div>

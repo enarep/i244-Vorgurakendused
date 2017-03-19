@@ -1,3 +1,7 @@
+<?php 
+	session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -14,15 +18,15 @@
                 <table>
                     <tbody>
                         <tr>
-                            <td>Kasutajanimi:</td>
-                            <td><input name="username" type="text" id="user"></td>
+                         
+                            <td><input name="username" type="text" id="user" placeholder="Kasutajanimi" required></td>
                         </tr>
                         <tr>
-                            <td>Parool:</td>
-                            <td><input name="password" type="password" id="pass"></td>
+                           
+                            <td><input name="password" type="password" id="pass" placeholder="Parool" required></td>
                         </tr>
                         <tr>
-                            <td><input name="submit" type="submit" value="Saada"></td>
+                            <td align = "center"><input name="submit" type="submit" value="Saada"></td>
                         </tr>
                     </tbody>
                 </table>
