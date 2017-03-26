@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Conway's Game of Life</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="gol.css"/>
+    <script src="lib/igloo-0.1.0.js"></script>
+    <script src="lib/jquery-2.1.1.min.js"></script>
+    <script src="js/gol.js"></script>
+  </head>
+  <body>
+    <h1>Conway's Game of Life <a href="https://en.wikipedia.org/wiki/Conway's_Game_of_Life"><img src="img/info.png" alt="wiki" height="20" width="20"></a></h1>
+	
+    <br>
+    <br>
+ 
+	  <table>
+		<th>
+			<span class="input">[Left-click]</span>
+			<br>
+			<span class="result">Joonista "rakke"</span>
+		</th>
+		<th>
+			<span class="input">[SPACE]</span>
+			<br>
+			<span class="result">Jooksuta/seiska simulatsioon</span>
+		</th>
+		<th>
+			<span class="input">[DEL]</span>
+			<br>
+			<span class="result">Kustuta kõik</span>           
+		</th>
+	  </table>
+	<!-- Canvas dimensions must be powers of two. -->
+	<canvas id="life" width="1024" height="512"></canvas>
+	<p align='center'>https://github.com/skeeto/webgl-game-of-life</p>
+    
+  </body>
+</html>

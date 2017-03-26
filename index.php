@@ -31,8 +31,11 @@
 								echo "</a>";
 							}
 						?>
+						
 						<a href="reg.php"><h3 class="curve">Registreeru</h3></a>
+						<a href="gameoflife.html"><h3 class="curve">Game of Life</h3></a>
 						<a href="galerii.php"><h3 class="curve">Galerii</h3></a>
+						
 						<?php
 							if(isset($_SESSION['login_user'])){
 								echo '<a href="logout.php"><h3 class="curve">Logi välja</h3></a>';
