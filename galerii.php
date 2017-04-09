@@ -19,6 +19,7 @@
                     <td><a class="thumb" href="pildi_detailid1.html"><img src="thumbs/IMG_5350_thumb.JPG" alt="pilt1"></a></td>
                     <td><a class="thumb" href="pildi_detailid2.html"><img src="thumbs/IMG_5447_thumb.JPG" alt="pilt2"></a></td>
                     <td><a class="thumb" href="lae_pilt.html"><img src="thumbs/addpicthumb.jpg" alt="lisa pilt"></a></td>
+					
                 </tr>
             </table>
 	   </div>

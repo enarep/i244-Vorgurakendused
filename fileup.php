@@ -1,4 +1,5 @@
 <?php
+  
   $kaust = "uploads/";
   $ylespilt = $kaust . basename($_FILES["suurpilt"]["name"]);
   $uploadOk = 1;
@@ -15,14 +16,12 @@
   }
   
   
-  //kontrolli kas sama nimega fail on juba olemas (hiljem tee nii,
-  //et server määrab ise failinimed)
-  
+  /*
   if(file_exists($ylespilt)){
-	echo "File exists.";
+	echo "File exists. ";
 	$uploadOk = 0;
   }
-  
+  */
   
   //kontrolli pildi suurust
   
@@ -43,13 +42,14 @@
   
   //lae fail yles
   
+  $randname = $kaust . substr(md5(rand()), 0, 10)  . "." . $imageFileType;
   if ($uploadOk == 0) {
-	echo "File was not uploaded";
+	echo "File was not uploaded.";
   } else {
-	if (move_uploaded_file($_FILES["suurpilt"]["tmp_name"], $ylespilt)) {
-      echo "Uploaded";
+	if (move_uploaded_file($_FILES["suurpilt"]["tmp_name"], $randname)) {
+      echo "Uploaded.";
 	} else {
-	  echo "Upload error";
+	  echo "Upload error.";
 	}
   }
  
