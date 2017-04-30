@@ -6,17 +6,14 @@
 
       
       $myusername = mysqli_real_escape_string($db,$_POST['username']);
-      $mypassword = mysqli_real_escape_string($db,$_POST['password']); 
+      $mypassword = mysqli_real_escape_string($db,$_POST['password']);
       
-      $sql = "SELECT id FROM 10162695_login WHERE username = '$myusername' and password = '$mypassword'";
-      $result = mysqli_query($db,$sql);
-      //$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-      //$active = $row['active'];
+      $sql = "SELECT password FROM 10162695_login WHERE username = '$myusername'";
+      $result = mysqli_query($db, $sql);
+      $retrieved_hash = mysqli_fetch_assoc($result);
+      $pw_ok = password_verify($mypassword, $retrieved_hash["password"]);
       
-      $count = mysqli_num_rows($result);
-      
-		
-      if($count == 1) {
+      if($pw_ok == 1) {
          
          $_SESSION['login_user'] = $myusername;
 		 
