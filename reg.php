@@ -14,19 +14,27 @@
             <form action="signup.php" method="post">
                 <table>
                     <tbody>
+                        <tr><td>Kasutajanimi: </td></tr>
                         <tr>
                             
                             <td><input name="username" type="text" id="user" placeholder="Soovitav kasutajanimi" required></td>
                         </tr>
-						
+				        <tr><td>Email: </td></tr>
 						<tr>
                             
                             <td><input name="email" type="text" id="email" placeholder="E-mail" required></td>
                         </tr>
 						
+                        <tr><td>Parool: </td></tr>
                         <tr>
                             
                             <td><input name="password" type="password" id="pass" placeholder="Parool" required></td>
+                        </tr>
+                        
+                        <tr><td>Parool uuesti: </td></tr>
+                        <tr>
+                            
+                            <td><input name="password2" type="password" id="pass2" placeholder="Parool" required></td>
                         </tr>
                     
                         <tr>

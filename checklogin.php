@@ -4,7 +4,6 @@
    
    if($_SERVER["REQUEST_METHOD"] == "POST") {
 
-      
       $myusername = mysqli_real_escape_string($db,$_POST['username']);
       $mypassword = mysqli_real_escape_string($db,$_POST['password']);
       
@@ -20,9 +19,11 @@
          
          header("location: index.php");
       }else {
-         //$error = "Vale kasutajanimi või parool";
-		 
-		 header("location: login_fail.php");
+         
+		 //header("location: login_fail.php");
+        echo "Vale kasutajanimi/parool!";
+        echo "<br>";
+        echo '<a href="login.php">Proovi uuesti</a>';
       }
    }
 ?>
