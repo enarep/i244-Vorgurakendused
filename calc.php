@@ -4,17 +4,22 @@
 include("funcs.php");
 
 if(empty($radiovalue)){
-    $radiovalue = 'plainhex';
+    $radiovalue = 'hexplain';
 }
 
 if (isset($_POST['sub'])) {
     
-    $input = $_POST['sisend'];
+    $input = strtolower($_POST['sisend']);
     $radio = $_POST['convert'];
     
     if ($radio == 'hexplain'){
         
-        $result = hex2plain($input);
+        if(validateHex($input)) {
+            $result = hex2plain($input);
+        } else {
+            $err = "Ma ei oska seda sisendit tõlgendada";
+        }
+        
         
     } elseif ($radio == 'plainhex') {
         
@@ -22,7 +27,12 @@ if (isset($_POST['sub'])) {
         
     } elseif ($radio == 'hexdec') {
         
-        $result = hex2decimal($input);
+        if(validateHex($input)) {
+            $result = hex2decimal($input);
+        } else {
+            $err = "Ma ei oska seda sisendit tõlgendada";
+        }
+        
         
     } elseif ($radio == 'dechex') {
         
@@ -30,8 +40,12 @@ if (isset($_POST['sub'])) {
         
     } elseif ($radio == 'hexbin') {
         
-        $result = hex2binary($input);
-        
+        if(validateHex($input)) {
+            $result = hex2binary($input);
+        } else {
+            $err = "Ma ei oska seda sisendit tõlgendada";
+        }
+         
     } elseif ($radio == 'binhex') {
         
         $result = binary2hex($input);
@@ -44,7 +58,7 @@ if (isset($_POST['sub'])) {
     
 }
 
-if(isset($_POST['convert'])){               //et raadionupp samas kohas püsiks peale refreshi
+if(isset($_POST['convert'])){               //et raadionupp samas kohas püsiks peale uuesti laadimist
     $radiovalue = $_POST['convert'];
 }
  
@@ -55,23 +69,25 @@ if(isset($_POST['convert'])){               //et raadionupp samas kohas püsiks 
 		<meta charset="UTF-8">
 		<title></title>
 		<link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16" />
         
     </head>
     
     <body>
         
         <div  align="center">
-            <form action="calc.php" method="post" enctype="multipart/form-data">
+            <form action="calc.php" method="post" enctype="multipart/form-data" id="vorm">
                 <table>
                     <tbody>
+                        
                         <tr>
 
-                            <label><input type="radio" name="convert" value="plainhex" id="plainhex" <?php if($radiovalue == "plainhex") { echo 'checked';} ?>>Plaintext -> HEX</label><br />
+                            <label><input type="radio" name="convert" value="hexplain" id="hexplain" <?php if($radiovalue == "hexplain") { echo 'checked';} ?>>HEX -> Plaintext</label><br />
 
                         </tr>
                         <tr>
 
-                            <label><input type="radio" name="convert" value="hexplain" id="hexplain" <?php if($radiovalue == "hexplain") { echo 'checked';} ?>>HEX -> plaintext</label><br />
+                            <label><input type="radio" name="convert" value="plainhex" id="plainhex" <?php if($radiovalue == "plainhex") { echo 'checked';} ?>>Plaintext -> HEX</label><br />
 
                         </tr>
                         <tr>
@@ -97,14 +113,19 @@ if(isset($_POST['convert'])){               //et raadionupp samas kohas püsiks 
                     
                         <tr>
                             <td>Sisesta siia:</td>
-                            <td><input type="text" name="sisend" value="<?php if (isset($swap)) echo $swap; ?>"></td>
+                            <td><input type="text" autofocus="autofocus" name="sisend" value="<?php if (isset($swap)) echo $swap; ?>"></td>
+                           
+                        </tr> 
+                        <tr>
+                            <td></td>
+                            <td><em><?php if(!empty($err)) { echo $err; $err = '';} ?></em></td>
                         </tr>
                         <tr>
                             <td>Tulemus:</td>
                                 <td>
                                     <textarea rows="3" name="valjund"><?php if (isset($result)) echo $result; ?></textarea>
                                 </td>
-                            <td><input type="submit" value="Sisendiks" name="swap"></td>
+                            <td><input type="submit" value="&uarr;" name="swap"></td>
                         </tr>
                         
                         <tr>

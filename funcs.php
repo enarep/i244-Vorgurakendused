@@ -73,4 +73,24 @@ function binary2hex($bin){
     
 }
 
+function validateHex($hex){
+    
+    $hexchars = '0123456789abcdef';
+    $arr = str_split($hexchars);
+    $check = 0;
+    
+    for ($i = 0; $i < strlen($hex); $i++){                  //käib kõik läbi ja kontrollib ega
+        foreach ($arr as $char){                            //ei esine sümboleid mida ei ole
+            if($hex[$i] == $char){                          //eelnevalt deklareeritud nimistus
+                $check++;
+            }
+        }
+        
+        if($check == 0){
+            return false;
+        }
+        $check = 0;
+    }
+    return true;
+}
 ?>
