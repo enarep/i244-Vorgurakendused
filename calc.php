@@ -9,8 +9,14 @@ if(empty($radiovalue)){
 
 if (isset($_POST['sub'])) {
     
+    
+    
     $input = strtolower($_POST['sisend']);
     $radio = $_POST['convert'];
+    
+    if($input == strtolower('game')){
+        header("location: gameoflife.html");
+    }
     
     if ($radio == 'hexplain'){
         

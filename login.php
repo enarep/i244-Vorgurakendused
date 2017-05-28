@@ -8,6 +8,7 @@
 		<meta charset="UTF-8">
 		<title>Sisselogimine</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16" />
         
     </head>
     

@@ -8,6 +8,7 @@
 		<meta charset="UTF-8">
 		<title>Koduleht</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16" />
 			
 	</head>
 
@@ -29,15 +30,15 @@
 								echo '<a href="login.php">';
 								echo '<h3 class="curve">Logi sisse</h3>';
 								echo "</a>";
+                                echo '<a href="reg.php">';
+								echo '<h3 class="curve">Registreeru</h3>';
+								echo "</a>";
 							}
 						?>
 						
-						<a href="reg.php"><h3 class="curve">Registreeru</h3></a>
-						<a href="gameoflife.html"><h3 class="curve">Game of Life</h3></a>
-						<a href="galerii.php"><h3 class="curve">Galerii</h3></a>
-						
 						<?php
 							if(isset($_SESSION['login_user'])){
+                                echo '<a href="calc.php"><h3 class="curve">HEX kalkulaator</h3></a>';
 								echo '<a href="logout.php"><h3 class="curve">Logi välja</h3></a>';
 							}
 						?>	
@@ -47,13 +48,6 @@
         </div>
      </div>
         
-        <div align="center">
-            <h4 class="curve2">
-                <?php
-                    echo 'Praegune PHP versioon' . phpversion();
-                ?>
-            </h3>
-        </div>
 
         <div align="center">
             <p>
