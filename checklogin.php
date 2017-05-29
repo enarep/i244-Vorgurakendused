@@ -20,7 +20,7 @@
          header("location: index.php");
       }else {
          
-		 //header("location: login_fail.php");
+		
         echo "Vale kasutajanimi/parool!";
         echo "<br>";
         echo '<a href="login.php">Proovi uuesti</a>';

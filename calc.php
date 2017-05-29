@@ -1,3 +1,7 @@
+<?php 
+	session_start();
+?>
+
 <!DOCTYPE html>
 <?php
 
@@ -42,7 +46,11 @@ if (isset($_POST['sub'])) {
         
     } elseif ($radio == 'dechex') {
         
-        $result = dec2hexadec($input);
+        if(isInteger($input)){
+            $result = dec2hexadec($input);
+        } else {
+            $err = "Siin peaks täisarv olema";
+        }
         
     } elseif ($radio == 'hexbin') {
         
@@ -53,9 +61,12 @@ if (isset($_POST['sub'])) {
         }
          
     } elseif ($radio == 'binhex') {
-        
-        $result = binary2hex($input);
-        
+        $input = remSpaces($input);
+        if (preg_match('~^[01]+$~', $input)) {
+            $result = binary2hex($input);
+        } else {
+            $err = "Siia paluks nullid ja ühed ainult";
+        }        
     }
     
 } elseif (isset($_POST['swap'])) {
@@ -73,13 +84,16 @@ if(isset($_POST['convert'])){               //et raadionupp samas kohas püsiks 
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>HEX teisendi</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
         <link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16" />
         
     </head>
     
     <body>
+        <p align="center">
+            <a href="jah.html">Kas selle jaoks pidi tõesti sisse logima?</a>
+        </p>
         
         <div  align="center">
             <form action="calc.php" method="post" enctype="multipart/form-data" id="vorm">

@@ -60,15 +60,7 @@ function hex2binary($hex){
 
 function binary2hex($bin){
     
-    $new = '';
-    for ($char = 0; $char < strlen($bin); $char++){     //eemalda tühikud
-        
-        if ($bin[$char] != ' '){
-            $new .= $bin[$char];
-        } 
-    }
-    
-    $out = base_convert($new, 2, 16);
+    $out = base_convert($bin, 2, 16);
     return $out;
     
 }
@@ -92,5 +84,23 @@ function validateHex($hex){
         $check = 0;
     }
     return true;
+}
+
+function isInteger($input){
+    if(ctype_digit(strval($input)) == 1){
+        return true;
+    }
+}
+
+function remSpaces($input){
+    
+    $new = '';
+    for ($char = 0; $char < strlen($input); $char++){
+        
+        if ($input[$char] != ' '){
+            $new .= $input[$char];
+        } 
+    }
+    return $new;
 }
 ?>
